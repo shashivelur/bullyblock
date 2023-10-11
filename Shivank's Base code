@@ -1,0 +1,158 @@
+# generate code for an app with 4 buttons
+# create a grid with 1 column and four rows
+# 1. button with label text "DANGER Level 1" and column 1, row 1.
+    # background color is yellow
+# 2. button with label text "DANGER Level 2" and column 1, row 2.
+    # background color is orange
+# 3. button with label text "DANGER Level 3" and column 1, row 3.
+    # background color is brown
+# 4. button with label text "DANGER Level 4" and column 1, row 4.
+    # background color is red
+# at bottom there are three buttons
+# create grid with 1 row and 3 columns
+# create 3 buttons
+    # 1. button in column 1, row 1.
+        # create photo with a grey human logo
+    # 2. button in column 2, row 1.
+        # create photo with a grey home logo
+    # 3. button in column 3, row 1.
+        # create photo with a grey gear logo
+# at top of screen, generate label with text "BullyBlock"
+# above grid with 4 buttons, generate label with text "Welcome, <user>!"
+# <user> is the username of the user
+# background color is a gradient from light gray to white
+# all buttons in grid with 1 column and four rows are rounded rectangles
+    # all buttons have a black border
+# when the user clicks on the first button, the screen alerts emergency contacts and displays yellow box with text "MOCKING"
+# when the user clicks on the second button, the screen alerts emergency contacts and devices nearby and displays orange box with text "BULLYING"
+# when the user clicks on the third button, the screen alerts emergency contacts, devices nearby, and the police and displays brown box with text "FIGHTING"
+# when the user clicks on the fourth button, the screen alerts emergency contacts, devices nearby, the police, and 911 and displays red box with text "WEAPONS/KIDNAPPING"
+
+
+# now generate the code for the app
+
+# import the necessary libraries
+
+import tkinter as tk
+from tkinter import *
+from tkinter import ttk
+from tkinter import messagebox
+
+# create the window
+
+window = tk.Tk()
+window.title("BullyBlock")
+window.geometry("350x700")
+window.configure(background="light blue")
+
+# create the label at the top of the screen
+
+label = tk.Label(window, text="BullyBlock", font=("Arial Bold", 50), bg="light blue")
+# change location of label to x and y coordinates
+label.grid(column=1 ,row=0)
+
+
+# create the label at the top of the screen
+
+label = tk.Label(window, text="Welcome, <user>!", font=("Arial Bold", 20), bg="white")
+label.location(x=1,y=1)
+
+# create the grid with 1 column and 4 rows
+
+grid = tk.Frame(window, bg="white")
+grid.grid(column=1, row=2)
+
+# create the first button
+
+# make the first button create a yellow box with text "MOCKING" when it is clicked
+
+def create_window():
+
+    new_window = tk.Toplevel(window)
+    new_window.title("Level 1")
+    new_window.geometry("350x700")
+    new_window.configure(background="yellow")
+    label = tk.Label(new_window, text="MOCKING", font=("Arial Bold", 50), bg="yellow", anchor = "center")
+    label.pack()
+
+def create_window2():
+    new_window = tk.Toplevel(window)
+    new_window.title("Level 2")
+    new_window.geometry("350x700")
+    new_window.configure(background="orange")
+    label = tk.Label(new_window, text="BULLYING", font=("Arial Bold", 48), bg="orange", anchor = "center")
+    label.pack()
+
+def create_window3():
+    new_window = tk.Toplevel(window)
+    new_window.title("Level 3")
+    new_window.geometry("350x700")
+    new_window.configure(background="brown")
+    label = tk.Label(new_window, text="FIGHTING", font=("Arial Bold", 48), bg="brown", anchor = "center")
+    label.pack()
+
+def create_window4():
+    new_window = tk.Toplevel(window)
+    new_window.title("Level 4")
+    new_window.geometry("350x700")
+    new_window.configure(background="red")
+    label = tk.Label(new_window, text="WEAPONS", font=("Arial Bold", 50), bg="red", anchor = "center")
+    label.pack()
+
+def create_window5():
+    new_window = tk.Toplevel(window)
+    new_window.title("Add A Friend")
+    new_window.geometry("350x700")
+    new_window.configure(background="light gray")
+    label = tk.Label(new_window, text="Add A Friend", font=("Arial Bold", 40), bg="light gray", anchor = "center")
+    label.pack()
+
+def open_window1():
+    window.mainloop(window.title("BullyBlock"))
+
+
+button1 = tk.Button(grid, text="DANGER Level 1", font=("Arial Bold", 20), bg="yellow", borderwidth=5, relief="solid", command=create_window, highlightbackground="yellow")
+button1.grid(column=1, row=1)
+button1.config(height=3, width=14)
+
+# create the second button
+
+button2 = tk.Button(grid, text="DANGER Level 2", font=("Arial Bold", 20), bg="orange", borderwidth=5, relief="solid", command=create_window2, highlightbackground="orange")
+button2.grid(column=1, row=2)
+button2.config(height=3, width=14)
+
+# create the third button
+
+button3 = tk.Button(grid, text="DANGER Level 3", font=("Arial Bold", 20), bg="brown", borderwidth=5, relief="solid", command=create_window3, highlightbackground="brown")
+button3.grid(column=1, row=3)
+button3.config(height=3, width=14)
+
+# create the fourth button
+
+button4 = tk.Button(grid, text="DANGER Level 4", font=("Arial Bold", 20), bg="red", borderwidth=5, relief="solid", command=create_window4, highlightbackground= "red")
+button4.grid(column=1, row=4)
+button4.config(height=3, width=14)
+
+# create the grid with 1 row and 3 columns
+
+grid = tk.Frame(window, bg="white")
+grid.grid(column=1, row=3)
+grid.place(x=22, y=600)
+grid.config(height=3, width=14)
+
+# create the first button
+
+button1 = tk.Button(grid, text="Add a friend", font=("Arial Bold", 20), bg="white", borderwidth=5, relief="solid", command=create_window5, highlightbackground="gray")
+button1.grid(column=1, row=1)
+
+# create the second button
+
+button2 = tk.Button(grid, text="Home", font=("Arial Bold", 20), bg="white", borderwidth=5, relief="solid", command=open_window1 )
+button2.grid(column=2, row=1)
+
+
+# run the window
+
+window.mainloop()
+
+# end of code
