@@ -1,0 +1,172 @@
+# Bully Block App
+import tkinter as tk 
+import tkinter.ttk as ttk
+from tkinter import Toplevel
+from tkinter import Button
+from tkinter import messagebox as m_box
+
+#Creating the windows
+win = tk.Tk()
+win.title("Bully Block")
+win.geometry("350x750")
+
+win.configure(bg='light blue')
+win.title("Bully Block")
+win.geometry("350x750")
+#Set buttons to fix for window size
+win.resizable(False, False)
+
+# Initialize arrays of strings
+friends = []
+parents = []
+teachers = []
+
+
+def create_window():
+
+    new_window = tk.Toplevel(new_window)
+    new_window.title("Level 1")
+    new_window.geometry("350x700")
+    new_window.configure(background="yellow")
+    label = tk.Label(new_window, text="MOCKING", font=("Arial Bold", 50), bg="yellow", anchor = "center")
+    label.pack()
+
+def create_window2():
+    new_window = tk.Toplevel(new_window)
+    new_window.title("Level 2")
+    new_window.geometry("350x700")
+    new_window.configure(background="orange")
+    label = tk.Label(new_window, text="BULLYING", font=("Arial Bold", 48), bg="orange", anchor = "center")
+    label.pack()
+
+def create_window3():
+    new_window = tk.Toplevel(new_window)
+    new_window.title("Level 3")
+    new_window.geometry("350x700")
+    new_window.configure(background="brown")
+    label = tk.Label(new_window, text="FIGHTING", font=("Arial Bold", 48), bg="brown", anchor = "center")
+    label.pack()
+
+def create_window4():
+    new_window = tk.Toplevel(new_window)
+    new_window.title("Level 4")
+    new_window.geometry("350x700")
+    new_window.configure(background="red")
+    label = tk.Label(new_window, text="WEAPONS", font=("Arial Bold", 50), bg="red", anchor = "center")
+    label.pack()
+
+#Create a label saying BullyBlock at 175, 25 with a font size of 40
+label1 = tk.Label(win, text="BullyBlock", font=("Arial Bold", 40), fg='black', bg='light blue')
+label1.place(x=40, y=10)
+
+
+button1 = tk.Button(win, text="DANGER Level 1", font=("Arial Bold", 20,), bg="yellow", borderwidth=5, relief="solid", command=create_window, highlightbackground="yellow")
+button1.config(height=2, width=14)
+button1.place(x=55, y=75)
+button2 = tk.Button(win, text="DANGER Level 2", font=("Arial Bold", 20), bg="orange", borderwidth=5, relief="solid", command=create_window2, highlightbackground="orange")
+button2.config(height=2, width=14)
+button2.place(x=55, y=175)
+button3 = tk.Button(win, text="DANGER Level 3", font=("Arial Bold", 20), bg="brown", borderwidth=5, relief="solid", command=create_window3, highlightbackground="brown")
+button3.config(height=2, width=14)
+button3.place(x=55, y=275)
+button4 = tk.Button(win, text="DANGER Level 4", font=("Arial Bold", 20), bg="red", borderwidth=5, relief="solid", command=create_window4, highlightbackground= "red")
+button4.config(height=2, width=14)
+button4.place(x=55, y=375)
+
+#Create a button at 25,75 saying settings and when clicked, it will open a new window
+button6 = Button(win, text="Add Contact", font =("Arial bold",30), borderwidth=5, bg='white', fg='black', activebackground='black', activeforeground='white')
+button6.config(height=2, width=10)
+button6.place(x=55, y=575)
+
+#Defining the functions
+
+
+
+def button1_func():
+    m_box.showinfo("Level 1", "Verbal abuse/Mocking")
+
+def button2_func():
+    m_box.showinfo("Level 2", "Physical abuse such as shoving")
+
+def button3_func():
+    m_box.showinfo("Level 3", "Physical abuse such as getting into fights")
+
+def button4_func():
+    m_box.showinfo("Level 4", "Guns/kidnapping")
+
+def button5_func():
+    win_child=Toplevel(win) # Child window 
+    win_child.geometry("450x750")  # Size of the window 
+    win_child.configure(bg='black')
+    win_child.title("Settings")
+    win_child.configure(bg='black')
+    win_child.configure(anchor='center')
+    #Create a label in child window saying Profile
+    label2 = tk.Label(win_child, text="Settings", font=("Arial Bold", 20), fg='gray', bg='black', anchor = 'center')
+
+def button6_func():
+    win_child=Toplevel(win) # Child window 
+    win_child.geometry("350x750")  # Size of the window 
+    win_child.title("Add")
+    #Create a label in child window saying Profile
+    label3 = tk.Label(win_child, text="Add friends", font=("Arial Bold", 20), fg='gray', bg='black')
+    label3.place(x=100, y=15)
+    #Make a text box saying " Enter the phone number of the person you want to add"
+    makeScreen (win_child)
+
+def makeScreen(childWin):
+    #Create a text box in child window
+    label7 = tk.Label(childWin, text="Name", font=("Arial Bold", 30), fg='gray', bg='black')
+    label7.place(x=5, y=100)
+    label8 = tk.Label(childWin, text="Phone", font=("Arial Bold", 30), fg='gray', bg='black')
+    label8.place(x=5, y=175)
+    label9 = tk.Label(childWin, text="Type", font=("Arial Bold", 30), fg='gray', bg='black')
+    label9.place(x=10, y=240)
+    name_text = tk.Text(childWin, height=2.5, width=20)
+    name_text.place(x=155, y=100)
+    phone_text = tk.Text(childWin, height=2.5, width=20)
+    phone_text.place(x=155, y=175)
+    type_combo = ttk.Combobox(master=childWin, width=10, height = 2, textvariable=tk.StringVar())
+    type_combo.config(state='readonly')
+    type_combo['values'] = ('Friend', 'Parent', 'Teacher')
+    type_combo.current(0)
+    type_combo.place(x=200, y=250)
+    #Create a button in child window
+    addbutton = Button(childWin, text="Add", bg='blue', fg='black', activebackground='blue', activeforeground='black')
+    addbutton.place(x=10, y=300)
+    addbutton.configure(font = ("Arial",40), borderwidth = 5)
+    addbutton.configure(height=2, width=10)
+    addbutton.configure(command = lambda: add_friends_func(name_text, phone_text, type_combo))
+
+    showButton = Button(childWin, text="Show Contacts", bg='black', fg='white', activebackground='white', activeforeground='black')
+    showButton.place(x=4, y=475)
+    showButton.configure(font = ("Arial",35), borderwidth = 5)
+    showButton.configure(height=2, width=12)
+    showButton.config(command = lambda: show_friends_func())
+
+def add_friends_func(nameText, phoneText, typeCombo):
+    name = nameText.get('1.0', 'end')
+    phone = phoneText.get('1.0', 'end')
+    contactType = typeCombo.get()
+
+    if contactType == "Friend":
+        friends.append(name)
+    elif contactType == "Parent":
+        parents.append(name)
+    elif contactType == "Teacher":
+        teachers.append(name)
+
+def show_friends_func():
+    m_box.showinfo("All Friends", "\n".join(friends))
+    m_box.showinfo("All Parents", "\n".join(parents))
+    m_box.showinfo("All Teachers", "\n".join(teachers))
+
+#Calling the functions
+button1.config(command = button1_func)
+button2.config(command = button2_func)
+button3.config(command = button3_func)
+button4.config(command = button4_func)
+button6.config(command = button6_func)
+
+#Running the mainloop
+win.mainloop()
