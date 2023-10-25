@@ -1,0 +1,278 @@
+import tkinter as tk 
+import tkinter.ttk as ttk
+from tkinter import Toplevel
+from tkinter import Button
+from tkinter import messagebox as m_box
+win = tk.Tk()
+win.title("Bully Block")
+win.geometry("350x750")
+win.configure(bg='light gray')
+win.title("Bully Block")
+win.geometry("350x725")
+win.resizable(False, False)
+friends = []
+parents = []
+teachers = []
+
+# create code to open a new tkinter window
+def create_window():
+    new_window = tk.Tk()
+    new_window.title("Level 1")
+    new_window.geometry("350x400")
+    new_window.configure(background="gold")
+    label = tk.Label(new_window, text="MOCKING", font=("Arial Bold", 50), bg="gold", anchor = "center", background = "gold")
+    label.pack()
+    label1 = tk.Label(new_window, text="Not Recording Audio", font=("Arial Bold", 23), fg='black', bg='gold')
+    label1.place(x=15, y=80)
+    #create a label saying, "click 3 times to stop recording" at 175, 25 with a font size of 40
+    label2 = tk.Label(new_window, text="Click button", font=("Arial Bold", 18), fg='black', bg='gold')
+    label2.place(x=105, y=270)
+    #create a label saying, "3 times to stop"
+    label3 = tk.Label(new_window, text="to start recording", font=("Arial Bold", 18), fg='black', bg='gold')
+    label3.place(x=75, y=300)
+    #create a button in the shape of a red dot with no text at 160,390
+    button1 = tk.Button(new_window, font=("Arial Bold", 20), bg="red", borderwidth=5, relief="solid",  highlightbackground="red3")
+    button1.config(height=2, width=4)
+    button1.place(x=140, y=140)
+
+
+
+def create_window2():
+    new_window2 = tk.Tk()
+    new_window2.title("Level 2")
+    new_window2.geometry("350x400")
+    new_window2.configure(background="dark orange")
+    label = tk.Label(new_window2, text="BULLYING", font=("Arial Bold", 50), bg="dark orange", anchor = "center")
+    label.pack()
+    label1 = tk.Label(new_window2, text=" Not Recording Audio", font=("Arial Bold", 23), fg='black', bg='dark orange')
+    label1.place(x=15, y=80)
+    #create a label saying, "click 3 times to stop recording" at 175, 25 with a font size of 40
+    label2 = tk.Label(new_window2, text="Click button", font=("Arial Bold", 18), fg='black', bg='dark orange')
+    label2.place(x=105, y=270)
+    #create a label saying, "3 times to stop"
+    label3 = tk.Label(new_window2, text="to start recording", font=("Arial Bold", 18), fg='black', bg='dark orange')
+    label3.place(x=75, y=300)
+    #create a button in the shape of a red dot with no text at 160,390
+    button1 = tk.Button(new_window2, font=("Arial Bold", 20), bg="red", borderwidth=5, relief="solid",  highlightbackground="red3")
+    button1.config(height=2, width=4)
+    button1.place(x=140, y=140)
+
+
+
+def create_window3():
+    new_window3 = tk.Tk()
+    new_window3.title("Level 3")
+    new_window3.geometry("350x400")
+    new_window3.configure(background="brown")
+    label = tk.Label(new_window3, text="FIGHTING", font=("Arial Bold", 50), bg="brown", anchor = "center")
+    label.pack()
+    label1 = tk.Label(new_window3, text="Recording Audio", font=("Arial Bold", 27), fg='black', bg='brown')
+    label1.place(x=30, y=80)
+    #create a label saying, "click 3 times to stop recording" at 175, 25 with a font size of 40
+    label2 = tk.Label(new_window3, text="Click button", font=("Arial Bold", 18), fg='black', bg='brown')
+    label2.place(x=105, y=270)
+    #create a label saying, "3 times to stop"
+    label3 = tk.Label(new_window3, text="3 times to stop recording", font=("Arial Bold", 18), fg='black', bg='brown')
+    label3.place(x=30, y=300)
+    #create a button in the shape of a red dot with no text at 160,390
+    button1 = tk.Button(new_window3, font=("Arial Bold", 20), bg="red", borderwidth=5, relief="solid",  highlightbackground="red3")
+    button1.config(height=2, width=4)
+    button1.place(x=140, y=140)
+
+
+
+def create_window4():
+    new_window4 = tk.Tk()
+    new_window4.title("Level 4")
+    new_window4.geometry("350x400")
+    new_window4.configure(background="red")
+    label = tk.Label(new_window4, text="WEAPONS", font=("Arial Bold", 50), bg="red", anchor = "center")
+    label.pack()
+    label1 = tk.Label(new_window4, text="Recording Audio", font=("Arial Bold", 27), fg='black', bg='red')
+    label1.place(x=30, y=80)
+    #create a label saying, "click 3 times to stop recording" at 175, 25 with a font size of 40
+    label2 = tk.Label(new_window4, text="Click button", font=("Arial Bold", 18), fg='black', bg='red')
+    label2.place(x=105, y=270)
+    #create a label saying, "3 times to stop"
+    label3 = tk.Label(new_window4, text="3 times to stop recording", font=("Arial Bold", 18), fg='black', bg='red')
+    label3.place(x=30, y=300)
+    #create a button in the shape of a red dot with no text at 160,390
+    button1 = tk.Button(new_window4, font=("Arial Bold", 20), bg="red3", borderwidth=5, relief="solid",  highlightbackground="red3")
+    button1.config(height=2, width=4)
+    button1.place(x=140, y=140)  
+
+
+
+#Create a label saying BullyBlock at 175, 25 with a font size of 40
+label1 = tk.Label(win, text="BullyBlock", font=("Arial Bold", 40), fg='black', bg='light gray')
+label1.place(x=35, y=0)
+
+
+button1 = tk.Button(win, text="MOCKING", font=("Arial Bold", 20,), bg="gold", borderwidth=5, relief="solid",  highlightbackground="gold", command = create_window)
+button1.config(height=4, width=19)
+button1.place(x=5, y=65)
+button2 = tk.Button(win, text="BULLYING", font=("Arial Bold", 20), bg="dark orange", borderwidth=5, relief="solid",  highlightbackground="orange", command = create_window2)
+button2.config(height=4, width=19)
+button2.place(x=5, y=220)
+button3 = tk.Button(win, text="FIGHTING", font=("Arial Bold", 20), bg="brown", borderwidth=5, relief="solid",  highlightbackground="brown", command = create_window3)
+button3.config(height=4, width=19)
+button3.place(x=5, y=375)
+button4 = tk.Button(win, text="WEAPONS", font=("Arial Bold", 20), bg="red", borderwidth=5, relief="solid",  highlightbackground= "red", command = create_window4)
+button4.config(height=4, width=19)
+button4.place(x=5, y=530)
+
+#Create a button at 25,75 saying settings and when clicked, it will open a new window
+button6 = Button(win, text="Add",anchor = "center", font =("Arial bold",10), borderwidth=5, bg='white', fg='black', activebackground='black', activeforeground='white')
+button6.config(height=1, width=7)
+button6.place(x=0, y=690)
+button7 = Button(win, text="View",anchor = "center", height = 1, width = 7, font =("Arial bold",10), borderwidth=5, bg='white', fg='black', activebackground='black', activeforeground='white')
+button7.place(x=280, y=690)
+button7.config(height=1, width=7)
+button7.config(command = lambda: show_friends_func())
+
+
+#Defining the functions
+
+
+
+def button5_func():
+    win_child=Toplevel(win) # Child window 
+    win_child.geometry("450x750")  # Size of the window 
+    win_child.configure(bg='black')
+    win_child.title("Settings")
+    win_child.configure(bg='black')
+    win_child.configure(anchor='center')
+    #Create a label in child window saying Profile
+    label2 = tk.Label(win_child, text="Settings", font=("Arial Bold", 20), fg='gray', bg='black', anchor = 'center')
+
+
+
+def clicked5():
+    window = tk.Toplevel(win)
+    window.title("Add Contact")
+    window.geometry("350x700")
+    window.configure(bg="light grey")
+    label = tk.Label(window, text="Add Contact", font=("Arial Bold", 35))
+    label.grid(column=0, row=0)
+    label.place(x=30, y=50)
+    label.config(bg="light grey")
+    label.config(fg="black")
+    name = tk.Label(window, text="First Name", font=("Arial Bold", 20))
+    name.grid(column=0, row=1)
+    name.place(x=105, y=150)
+    name.config(bg="light grey")
+    name.config(fg="black")
+    phonenumber = tk.Label(window, text="Last Name", font=("Arial Bold", 20))
+    phonenumber.grid(column=0, row=2)
+    phonenumber.place(x=105, y=250)
+    phonenumber.config(bg="light grey")
+    phonenumber.config(fg="black")
+    email = tk.Label(window, text="Phone Number", font=("Arial Bold", 20))
+    email.grid(column=0, row=3)
+    email.place(x=80, y=350)
+    email.config(bg="light grey")
+    email.config(fg="black")
+    entry = tk.Entry(window, width=20)
+    entry.grid(column=1, row=1)
+    entry.place(x=115, y=200)
+    entry.config(bg="white")
+    entry.config(fg="black")
+    entry1 = tk.Entry(window, width=20)
+    entry1.grid(column=1, row=2)
+    entry1.place(x=115, y=300)
+    entry1.config(bg="white")
+    entry1.config(fg="black")
+    entry2 = tk.Entry(window, width=20)
+    entry2.grid(column=1, row=3)
+    entry2.place(x=115, y=400)
+    entry2.config(bg="white")
+    entry2.config(fg="black")
+    # create a drop down menu with the options "friends", "family", and "teachers"
+    clicked = tk.StringVar()
+    clicked.set("Contact Type")
+    drop = tk.OptionMenu(window, clicked, "Friend", "Family", "Teacher")
+    drop.grid(column=0, row=4)
+    drop.place(x=85, y=470)
+    drop.config(bg="light grey")
+    drop.config(fg="Black")
+    # change font size of the drop down menu
+    drop.config(font=("Arial Bold", 17))
+    # change the color of the drop down menu
+    drop.config(bg="white")
+    drop.config(fg="black")
+    # function to save contact information to a file
+    def save_contact(name, phone, email):
+        with open('contacts.txt', 'a') as file:
+            file.write(f"{name}, {phone}, {email}\n")
+    # create a button to save the contact information and drop down bar info
+    def save():
+        save_contact(entry.get(), entry1.get(), entry2.get())
+        save_contact(clicked.get(), "", "")
+    button = tk.Button(window, text="Save", bg="white", fg="black", command=save)
+    button.grid(column=1, row=5)
+    button.place(x=145, y=550)
+    button.config(height=2, width=10)
+    button.config(relief="ridge", borderwidth=0.1)
+    button.config(bg="blue")
+    button.config(fg="white")
+    # create a button to delete all contact information after asking if they are sure
+    def delete_all():
+        if m_box.askyesno("Delete All", "Are you sure you want to delete all contacts?"):
+            with open('contacts.txt', 'w') as file:
+                file.write("")
+    button2 = tk.Button(window, text="Delete All", bg="white", fg="black", command=delete_all)
+    button2.grid(column=1, row=5)
+    button2.place(x=0, y=635)
+    button2.config(height=4, width=13)
+    button2.config(relief="ridge", borderwidth=0.1)
+    button2.config(bg="red")
+    button2.config(fg="white")
+    # create a button to delete last contact
+    def delete_last_entry():
+        with open('contacts.txt', 'r') as file:
+            lines = file.readlines()
+        with open('contacts.txt', 'w') as file:
+            file.writelines([item for item in lines[:-1]])
+    button3 = tk.Button(window, text="Delete Last", bg="white", fg="black", command=delete_last_entry)
+    button3.grid(column=1, row=5)
+    button3.place(x=255, y=635)
+    button3.config(height=4, width=13)
+    button3.config(relief="ridge", borderwidth=0.1)
+    button3.config(bg="green2")
+    button3.config(fg="white")
+    # CREATE A BACK BUTTON
+    def back():
+        window.destroy()
+    button4 = tk.Button(window, text="Back", bg="white", fg="black", command=back)
+    button4.grid(column=1, row=5)
+    button4.place(x=10, y=10)
+    button4.config(height=1, width=8)
+    button4.config(relief="ridge", borderwidth=0.1)
+    button4.config(bg="white")
+    entry
+
+def add_friends_func(nameText, phoneText, typeCombo):
+    name = nameText.get('1.0', 'end')
+    phone = phoneText.get('1.0', 'end')
+    contactType = typeCombo.get()
+
+    if contactType == "Friend":
+        friends.append(name)
+    elif contactType == "Parent":
+        parents.append(name)
+    elif contactType == "Teacher":
+        teachers.append(name)
+
+def show_friends_func():
+    with open('contacts.txt', 'r') as file:
+        m_box.showinfo("Contacts", file.read())
+
+#Calling the functions
+button1.config(command = create_window)
+button2.config(command = create_window2)
+button3.config(command = create_window3)
+button4.config(command = create_window4)
+button6.config(command = clicked5)
+
+#Running the mainloop
+win.mainloop()
