@@ -1,7 +1,7 @@
 # BullyBlock
 
 An application that helps create a more safe environment for children and reduce any worry that the students and parents have about bullying in schools. 
-We built this app with Github Copilot and python and tested the app on Visual Studio code using Jupyter notebook.
+We built this app with Visual Studio code with the Github Copilot extension and tested the app using Jupyter notebook.
 
 ## Project Status
 
@@ -20,7 +20,7 @@ Install Python, Jupyter Notebook, and tkinter
 2. Open BullyBlock_Final_Code.ipynb
 3. Press run
 
-
+## By: Shivank Ahuja, Vihaan Gandra, and Viraj Velur
 
 
 
